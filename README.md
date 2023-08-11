@@ -45,7 +45,7 @@ on your terminal screen, but ensure that your mobile phone and your computer are
 
 To learn more about React Native an expo, take a look at the following resources:
 
-- [Learn React Native Documentation](https://reactnative.dev/docs/getting-started) - learn about React Native.
+- [Learn React Native](https://reactnative.dev/docs/getting-started) - learn about React Native.
 - [Expo Documentation](https://docs.expo.dev/) - learn about expo.
 
 ## Deploy on Expo server
