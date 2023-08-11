@@ -1,7 +1,7 @@
 # DROMPET MOBILE APP
 
 Dompet is my first react native mobile app
-[Download](https://https://github.com/anihpatrickugo/Dompet/)
+[Download for Android](https://expo.dev/artifacts/eas/6ceURbEvjT55y7a4K7iorJ.apk)
 
 This is a [React Native](https://reactnative.dev/) project created with [`expo`](https://expo.dev/).
 
