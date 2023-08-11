@@ -16,7 +16,7 @@ git clone https://github.com/anihpatrickugo/Domplet.git
 2. change to the root working directory
 
 ```bash
-cd Domplet
+cd Dompet
 ```
 
 3. install all dependencies
