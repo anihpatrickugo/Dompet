@@ -1,20 +1,125 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// In App.js in a new project
 
-export default function App() {
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+import HomeScreen from "./app/pages/HomeScreen";
+import StatsScreen from "./app/pages/StatsScreen";
+import TransferScreen from "./app/pages/TransferScreen";
+import HomeHeader from "./app/components/homeHeader";
+import SignupScreen from "./app/pages/SignupScreen";
+import LoginScreen from "./app/pages/LoginScreen";
+import MenuScreen from "./app/pages/MenuScreen";
+import NotificationsScreen from "./app/pages/NotificationsScreen";
+import ProfileScreen from "./app/pages/ProfileScreen";
+import CardScreen from "./app/pages/CardScreen";
+
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={({ navigation, route }) => ({
+            headerTitle: (props) => (
+              <HomeHeader {...props} navigation={navigation} />
+            ),
+            headerShadowVisible: false,
+            headerBackVisible: false,
+          })}
+        />
+        <Stack.Screen
+          name="Stats"
+          component={StatsScreen}
+          options={({ navigation, route }) => ({
+            headerTitle: "Balance",
+            headerShadowVisible: false,
+            headerBackVisible: false,
+          })}
+        />
+
+        <Stack.Screen
+          name="Transfer"
+          component={TransferScreen}
+          options={({ navigation, route }) => ({
+            headerTitle: "",
+            headerStyle: {
+              backgroundColor: "white",
+            },
+            headerBackImageSource: require("./app/icons/arrow-circle-left.png"),
+            headerShadowVisible: false,
+          })}
+        />
+
+        <Stack.Screen
+          name="Menu"
+          component={MenuScreen}
+          options={({ navigation, route }) => ({
+            headerTitle: "",
+            headerStyle: {
+              backgroundColor: "white",
+            },
+            headerBackImageSource: require("./app/icons/arrow-circle-left.png"),
+            headerShadowVisible: false,
+          })}
+        />
+
+        <Stack.Screen
+          name="Card"
+          component={CardScreen}
+          options={({ navigation, route }) => ({
+            headerTitle: "",
+            headerStyle: {
+              backgroundColor: "white",
+            },
+            headerBackImageSource: require("./app/icons/arrow-circle-left.png"),
+            headerShadowVisible: false,
+          })}
+        />
+
+        <Stack.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={({ navigation, route }) => ({
+            headerTitle: "",
+            headerStyle: {
+              backgroundColor: "white",
+            },
+            headerBackImageSource: require("./app/icons/arrow-circle-left.png"),
+            headerShadowVisible: false,
+          })}
+        />
+
+        <Stack.Screen
+          name="Notifications"
+          component={NotificationsScreen}
+          options={({ navigation, route }) => ({
+            headerTitle: "",
+            headerStyle: {
+              backgroundColor: "white",
+            },
+            headerBackImageSource: require("./app/icons/arrow-circle-left.png"),
+            headerShadowVisible: false,
+          })}
+        />
+
+        <Stack.Screen
+          name="Signup"
+          component={SignupScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
